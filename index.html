@@ -5,14 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TOD0-LIST</title>
     <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: aliceblue;
+        }
+        .container{
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: aliceblue;
+            border-radius: 10px;
+
+        }
+        h1{
+            text-align: center;
+            color: #333;
+        }
+        .todo-input{
+            display: flex;
+            margin-bottom: 20px;
+        }
         .done{
             text-decoration: line-through;
         }
     </style>
 </head>
 <body>
-    <div>
-        <input type="text"id="write">
+    <div class="container">
+        <h1>Todo list</h1>
+        <div class="todo-input">
+            <input type="text"id="todoInput" placeholder="">
+            <button id="addTodobtn">Add</button>
+        </div>
+        
         <ul id="todo-list"></ul>
     </div>
 </body>
