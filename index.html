@@ -30,6 +30,7 @@
         .done{
             text-decoration: line-through;
         }
+
     </style>
 </head>
 <body>
@@ -44,12 +45,15 @@
     </div>
 </body>
 <script>
-    let write = document.getElementById("write");
-    let todolist=document.getElementById("todo-list");
-    write.addEventListener("keyup",function(e){
+    const todoInput= document.getElementById("todoInput");
+    const addTodobtn=document.getElementById("addtodobtn");
+    const todoList=document.getElementById('todolist');
+
+    addTodobtn.addEventListener('click',addTodo);
+    write.addEventListener("keypress",function(e){
         if(e.key=="Enter"){
-            addTodo(this.value);
-            this.value=''
+            addTodo();
+            
         }
     })
     function addTodo(val){
