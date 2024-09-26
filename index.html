@@ -52,7 +52,7 @@
         const value = inputEl.value;
 
         const newDivEl =document.createElement("div");
-        newDivEl.innerHTML=value;
+        newDivEl.innerHTML= <div> +value+<button onclick="deletetodo()">delete</button></div>;
 
         document.querySelector("body").appendChild(newDivEl)
     }
