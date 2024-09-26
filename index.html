@@ -38,32 +38,23 @@
         <h1>Todo list</h1>
         <div class="todo-input">
             <input type="text"id="todoInput" placeholder="">
-            <button id="addTodobtn">Add</button>
+            <button onclick="addTodo()">Add</button>
         </div>
         
         <ul id="todolist"></ul>
     </div>
 </body>
 <script>
-    const todoInput= document.getElementById("todoInput");
-    const addTodobtn=document.getElementById("addtodobtn");
-    const todoList=document.getElementById('todolist');
 
-    addTodobtn.addEventListener('click',addTodo);
-    write.addEventListener("keypress",function(e){
-        if(e.key=="Enter"){
-            addTodo();
-            
-        }
-    });
+    
     function addTodo(){
-        const todoText =todoInput.value.trim();
-        if(todoText!==''){
-            const li=document.createElement('li');
-            li.textContent=todoText;
-            todoList.appendChild(li);
-            todoInput.value ='';
-        }
+        const inputEl=document.querySelector("input");
+        const value = inputEl.value;
+
+        const newDivEl =document.createElement("div");
+        newDivEl.innerHTML=value;
+
+        document.querySelector("body").appendChild(newDivEl)
     }
 </script>
 </html>
