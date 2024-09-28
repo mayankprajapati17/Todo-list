@@ -45,16 +45,27 @@
     </div>
 </body>
 <script>
+    let ctr=1;
+    function deleteTodo(index){
+        const ele=document.getElementById(index);
+        ele.parentNode.removeChild(ele);
+    }
 
-    
     function addTodo(){
         const inputEl=document.querySelector("input");
         const value = inputEl.value;
-
+       
         const newDivEl =document.createElement("div");
-        newDivEl.innerHTML= <div> +value+<button onclick="deletetodo()">delete</button></div>;
-
+        newDivEl.setAttribute("id",ctr);
+        ctr=ctr+1;
+        newDivEl.innerHTML= value;
+        const newButton = document.createElement('button');
+        newButton.textContent = 'Delete';
+        newButton.setAttribute("onclick", "deleteTodo(" + ctr + ")");
+  
         document.querySelector("body").appendChild(newDivEl)
+        
     }
+
 </script>
 </html>
