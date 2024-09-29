@@ -52,18 +52,22 @@
     }
 
     function addTodo(){
-        const inputEl=document.querySelector("input");
-        const value = inputEl.value;
+        const value=document.querySelector("input").value;
        
-        const newDivEl =document.createElement("div");
-        newDivEl.setAttribute("id",ctr);
-        ctr=ctr+1;
-        newDivEl.innerHTML= value;
-        const newButton = document.createElement('button');
-        newButton.textContent = 'Delete';
-        newButton.setAttribute("onclick", "deleteTodo(" + ctr + ")");
+       
+        
+        const spanel =document.createElement("span");
+        const buttonel =document.createElement("button");
+        const divel=document.createElement("div");
+        spanel.innerHTML=value;
+        buttonel.innerHTML="delete";
+        
+        divel.appendChild(spanel);
+        divel.appendChild(buttonel);
+
+        
   
-        document.querySelector("body").appendChild(newDivEl)
+        document.querySelector("body").appendChild(divel);
         
     }
 
